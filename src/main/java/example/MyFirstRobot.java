@@ -98,7 +98,10 @@ public class MyFirstRobot {
         // Camera Test
         //=======================================
 
-
+        for (int i = 0; i <= 40; i++){
+            System.out.println("Tracking Line Mode");
+            System.out.println(leftCam.setTrackingMode(leftCam.LINE_TRACKING));
+        }
 
 
 
