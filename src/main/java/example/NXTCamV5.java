@@ -133,4 +133,29 @@ public class NXTCamV5 extends BaseSensor {
         );
     }
 
+    public void wake() {
+        this.sendCommand("WAKE");
+    }
+
+    public void sleep() {
+        this.sendCommand("SLEEP");
+    }
+
+    public void getLineValue(){
+        this.setTrackingMode(this.OBJECT_TRACKING);
+        System.out.print("Value 0");
+        System.out.println(this.getIntegerAttribute("value0"));
+        System.out.print("Value 1");
+        System.out.println(this.getIntegerAttribute("value1"));
+        System.out.print("Value 2");
+        System.out.println(this.getIntegerAttribute("value2"));
+        System.out.print("Value 3");
+        System.out.println(this.getIntegerAttribute("value3"));
+        System.out.print("Value 4");
+        System.out.println(this.getIntegerAttribute("value4"));
+        System.out.print("Value 5");
+        System.out.println(this.getIntegerAttribute("value5"));
+
+    }
+
 }
