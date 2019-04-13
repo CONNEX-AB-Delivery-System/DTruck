@@ -13,73 +13,70 @@ import lejos.utility.Delay;
 
 public class MyFirstRobot {
 
-    private static int LineReaderS(int colorSampleRed, int colorSampleGreen, int colorSampleBlue) {
-
-        int calibrationValue = 60;
-        int steerAngle = 0;
-
-        float average = ((colorSampleRed + colorSampleGreen + colorSampleBlue) / 3) * 100 / 255;
-        int sensorValue = Math.round(average);
-        sensorValue = sensorValue - calibrationValue;
-
-        System.out.println("EV3-Forklift: R:" + colorSampleRed + " G:" + colorSampleGreen + " B:" + colorSampleBlue
-                + "SensorValue:" + sensorValue);
-
-        if (sensorValue >= -10 && sensorValue < 10) {
-            steerAngle = 0;
-        }
-        if (sensorValue >= 10 && sensorValue < 30) {
-            steerAngle = 100;
-        }
-        if (sensorValue >= -30 && sensorValue < -10) {
-            steerAngle = -100;
-        }
-        if (sensorValue >= 30) {
-            steerAngle = 200;
-        }
-        if (sensorValue <= -30) {
-            steerAngle = -200;
-        }
-
-        return steerAngle;
-    }
-
     private static void Run () {
 
     }
 
     public static void main(final String[] args){
 
-        System.out.println("EV3-Forklift: Creating Motor A - Lifting function");
-        final EV3LargeRegulatedMotor motorLift = new EV3LargeRegulatedMotor(MotorPort.A);
-        System.out.println("EV3-Forklift: Creating Motor B - Tilting function");
-        final EV3MediumRegulatedMotor motorTilt = new EV3MediumRegulatedMotor(MotorPort.B);
-        System.out.println("EV3-Forklift: Creating Motor C - Driving function");
+        // MOTORS
+
+        System.out.println("EV3-DeliveryTruck: Creating Motor C - Driving");
         final EV3MediumRegulatedMotor motorDrive = new EV3MediumRegulatedMotor(MotorPort.C);
-        System.out.println("EV3-Forklift: Creating Motor D - Steering function");
+        System.out.println("EV3-DeliveryTruck: Creating Motor D - Steering");
         final EV3MediumRegulatedMotor motorSteer = new EV3MediumRegulatedMotor(MotorPort.D);
-        final EV3TouchSensor touchLift = new EV3TouchSensor(SensorPort.S1);
-        final EV3ColorSensor palletReader = new EV3ColorSensor(SensorPort.S3);
-        final EV3ColorSensor lineReader = new EV3ColorSensor(SensorPort.S4);
+
+        // Sensors
+
+        // final EV3TouchSensor touchLift = new EV3TouchSensor(SensorPort.S1);
+        // final EV3ColorSensor palletReader = new EV3ColorSensor(SensorPort.S3);
+        // final EV3ColorSensor lineReader = new EV3ColorSensor(SensorPort.S4);
 
         //To Stop the motor in case of pkill java for example
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             public void run() {
                 System.out.println("Emergency Stop");
-                motorLift.stop();
-                motorTilt.stop();
                 motorDrive.stop();
                 motorSteer.stop();
             }
         }));
 
-        System.out.println("EV3-Forklift: Defining the Stop mode");
-        motorLift.brake();
+        System.out.println("Driving test");
+        Delay.msDelay(1000);
+
+        motorDrive.setSpeed(300);
+        motorDrive.forward();
+
+        Delay.msDelay(2000);
+
+        motorSteer.setSpeed(300);
+        motorSteer.forward();
+
+        Delay.msDelay(2000);
+
+        motorSteer.backward();
+
+        Delay.msDelay(2000);
+
+        motorSteer.stop(true);
+
+        motorDrive.stop(true);
+
+        Delay.msDelay(2000);
+
+        motorDrive.backward();
+
+        Delay.msDelay(2000);
+
+        motorDrive.stop(true);
+
+        //System.out.println("EV3-Forklift: Defining the Stop mode");
+        //motorLift.brake();
         /*motorTilt.brake();
         motorDrive.brake();
         motorSteer.brake();*/
 
-        SampleProvider palletSample = palletReader.getRGBMode();
+        /*SampleProvider palletSample = palletReader.getRGBMode();
         int palletSampleSize = palletSample.sampleSize();
         float[] palletSampleColor = new float[palletSampleSize];
         palletSample.fetchSample(palletSampleColor, 0);
@@ -171,7 +168,7 @@ public class MyFirstRobot {
 
         palletAverage = (palletColorSampleRed + palletColorSampleGreen + palletColorSampleBlue) / 3;
 
-        System.out.println("EV3-Forklift: palletReflect:" + palletAverage);
+        System.out.println("EV3-Forklift: palletReflect:" + palletAverage);*/
 
        /* final int motorSteerSpeed = 500; //+ for rotating to ?, - for rotating to right
         motorSteer.setSpeed(motorSteerSpeed);

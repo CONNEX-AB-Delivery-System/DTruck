@@ -5,7 +5,7 @@ project.ext {
     mainClass = "example.MyFirstRobot"
 
     // Brick connection parameters //
-    brickHost = "192.168.122.61"
+    brickHost = "192.168.123.136"
     brickUser = "robot"
     brickPassword = "maker"
 
