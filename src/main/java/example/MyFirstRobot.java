@@ -4,6 +4,7 @@ import ev3dev.actuators.lego.motors.EV3LargeRegulatedMotor;
 import ev3dev.actuators.lego.motors.EV3MediumRegulatedMotor;
 import ev3dev.sensors.Battery;
 import ev3dev.sensors.ev3.EV3ColorSensor;
+import ev3dev.sensors.ev3.EV3IRSensor;
 import ev3dev.sensors.ev3.EV3TouchSensor;
 import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.SensorPort;
@@ -13,28 +14,66 @@ import lejos.utility.Delay;
 
 public class MyFirstRobot {
 
-    private static void Run () {
+    private static int LineReader() {
+        //TODO: PLACE YOUR CODE HERE
+
+        return 0;
+    }
+
+    private static int steerAngle() {
+        //TODO: PLACE YOUR CODE HERE
+
+        return 0;
+    }
+
+    private static int move() {
+        //TODO: PLACE YOUR CODE HERE
+
+        return 0;
+    }
+
+
+    private static void DTruckRun () {
+
+        move();
+        //TODO: PLACE YOUR CODE HERE
 
     }
 
+    //motor for drive forwards and backwards - connected to motor port D
+    public static EV3MediumRegulatedMotor motorDrive;
+    //motor for steering - connected to motor port C
+    public static EV3MediumRegulatedMotor motorSteer;
+
+    //motor for grabber - connected to motor port A
+    //public static EV3MediumRegulatedMotor craneGrabber;
+
+    //sensor for proximity - connect to sensor port S1
+    public static EV3IRSensor sensorProximity;
+    //sensor for line reading - connected to sensor port S4
+    public static LineReaderV2 lineReader;
+
     public static void main(final String[] args){
 
-        // MOTORS
+        double minVoltage = 7.200;
 
-        System.out.println("EV3-DeliveryTruck: Creating Motor C - Driving");
-        final EV3MediumRegulatedMotor motorDrive = new EV3MediumRegulatedMotor(MotorPort.C);
-        System.out.println("EV3-DeliveryTruck: Creating Motor D - Steering");
-        final EV3MediumRegulatedMotor motorSteer = new EV3MediumRegulatedMotor(MotorPort.D);
-        System.out.println("Motor initialized");
+        //Always check if battery voltage is enougth
+        System.out.println("Battery Voltage: " + Battery.getInstance().getVoltage());
+        System.out.println("Battery Current: " + Battery.getInstance().getBatteryCurrent());
+        if (Battery.getInstance().getVoltage() < minVoltage) {
+            System.out.println("Battery voltage to low. Shutdown down and change the batteries.");
+            System.exit(0);
+        }
 
-        // Sensors
+        // initialize all motors here
+        System.out.println("EV3-DTruck: Creating Motor C - Driving");
+        motorDrive = new EV3MediumRegulatedMotor(MotorPort.C);
+        System.out.println("EV3-DTruck: Creating Motor D - Steering");
+        motorSteer = new EV3MediumRegulatedMotor(MotorPort.D);
 
-        System.out.println("EV3-DeliveryTruck: Creating Sensor S3 - Linereader");
-        final LineReaderV2 lineReader = new LineReaderV2(SensorPort.S3);
-        System.out.println("EV3-DeliveryTruck: Creating Sensor S1 - Left Camera");
-        final NXTCamV5 leftCam = new NXTCamV5(SensorPort.S1);
-        System.out.println("EV3-DeliveryTruck: Creating Sensor S4 - Right Camera");
-        final NXTCamV5 rightCam = new NXTCamV5(SensorPort.S4);
+        // initialize all sensors here
+        lineReader = new LineReaderV2(SensorPort.S4);
+        sensorProximity = new EV3IRSensor(SensorPort.S1);
         System.out.println("Sensors initialized");
 
         //To Stop the motor in case of pkill java for example
@@ -46,73 +85,22 @@ public class MyFirstRobot {
             }
         }));
 
-        //=======================================
-        /* DRIVING TEST
-        //=======================================
+        System.out.println("EV3-Forklift: Defining the Stop mode");
+        motorDrive.brake();
+        motorSteer.brake();
 
-        System.out.println("Driving test");
-        Delay.msDelay(1000);
 
-        motorDrive.setSpeed(400);
-        motorDrive.backward();
 
-        Delay.msDelay(2000);
 
-        motorSteer.setSpeed(300);
-        motorSteer.forward();
 
-        Delay.msDelay(2000);
+        //Main class for executing code
+        DTruckRun();
 
-        motorSteer.backward();
 
-        Delay.msDelay(2000);
-
-        motorSteer.stop(true);
-
-        motorDrive.stop(true);
-
-        Delay.msDelay(2000);
-
-        motorDrive.forward();
-
-        Delay.msDelay(2000);
-
-        motorDrive.stop(true);
-
-        */
-
-        //=======================================
-        // Linereader Test
-        //=======================================
-
-        //lineReader.wake();
-
-        //for (int i = 0; i <= 40; i++){
-        //    System.out.println(lineReader.getPIDValue());
-        //    Delay.msDelay(1000);
-        //}
-
-        //lineReader.sleep();
-
-        //=======================================
-        // Camera Test
-        //=======================================
-
-        leftCam.wake();
-
-        for (int i = 0; i <= 120; i++){
-            System.out.println(i + " ==============================");
-            leftCam.getLineValue();
-            Delay.msDelay(1000);
-        }
-
-        leftCam.sleep();
 
 
 
         System.out.println("Checking Battery");
         System.out.println("Votage: " + Battery.getInstance().getVoltage());
-
-        System.exit(0);
     }
 }

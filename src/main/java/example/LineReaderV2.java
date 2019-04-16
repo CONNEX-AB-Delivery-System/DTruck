@@ -9,6 +9,16 @@ import java.util.Set;
 
 /**
  * Mindsensors LineReader V2 sensor driver
+<<<<<<< HEAD
+ *
+ * ev3dev hardware driver:
+ * http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/sensor_data.html#ms-line-leader
+ *
+ * Example: https://github.com/ev3dev-lang-java/ev3dev-lang-java/blob/develop/src/main/java/ev3dev/sensors/mindsensors/NXTCamV5.java
+ * Example: https://github.com/ev3dev-lang-java/ev3dev-lang-java/blob/develop/src/main/java/ev3dev/hardware/EV3DevDevice.java
+ * Example: https://github.com/ev3dev-lang-java/ev3dev-lang-java/blob/develop/src/main/java/ev3dev/hardware/EV3DevSensorDevice.java
+ *
+=======
  * <p>
  * ev3dev hardware driver:
  * http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/sensor_data.html#ms-line-leader
@@ -17,6 +27,7 @@ import java.util.Set;
  * Example: https://github.com/ev3dev-lang-java/ev3dev-lang-java/blob/develop/src/main/java/ev3dev/hardware/EV3DevDevice.java
  * Example: https://github.com/ev3dev-lang-java/ev3dev-lang-java/blob/develop/src/main/java/ev3dev/hardware/EV3DevSensorDevice.java
  * <p>
+>>>>>>> 6e60cbe13c18a8645a7af91b3c10ec6a88254cf8
  * BaseSensor class: https://github.com/ev3dev-lang-java/ev3dev-lang-java/blob/develop/src/main/java/ev3dev/sensors/BaseSensor.java
  */
 
@@ -24,6 +35,10 @@ import java.util.Set;
 public class LineReaderV2 extends BaseSensor {
 
     private static final String MINDSENSORS_LINEREADERV2 = "ms-line-leader";
+
+    private int lightArrayLength = 8;
+
+    private int[] intArray = new int[this.lightArrayLength];
 
     private String lineColorMode = "black";
 
@@ -81,22 +96,22 @@ public class LineReaderV2 extends BaseSensor {
     /**
      * Get the PID-ALL mode values
      *
-     * @return array of values:
-     * value0: Steering (-100 to 100)
-     * value1: Average (0 to 80)
-     * value2: Result (as bits)
+     * @return  array of values:
+     *          value0: Steering (-100 to 100)
+     *          value1: Average (0 to 80)
+     *          value2: Result (as bits)
      */
     public int[] getPIDALLValues() {
         int lightArrayLength = 3;
-        int[] intArray = new int[lightArrayLength];
+        int[] pidArray = new int[lightArrayLength];
 
         this.setMode("PID-ALL");
         for (int i = 0; i < lightArrayLength; i++) {
             String value = "value" + i;
-            intArray[i] = this.getIntegerAttribute(value);
+            pidArray[i] = this.getIntegerAttribute(value);
         }
 
-        return intArray;
+        return pidArray;
     }
 
     /**
@@ -123,6 +138,7 @@ public class LineReaderV2 extends BaseSensor {
      * @return return array of values from individual IR lights (0 - 7)
      */
     public int[] getRAWValues() {
+        Arrays.fill(intArray,0);
         int lightArrayLength = 8;
         int[] intArray = new int[lightArrayLength];
         this.setMode("RAW");
@@ -196,7 +212,6 @@ public class LineReaderV2 extends BaseSensor {
 
     /**
      * Send a single byte command represented by a letter
-     *
      * @param cmd the letter that identifies the command
      */
     public void sendCommand(final String cmd) {
