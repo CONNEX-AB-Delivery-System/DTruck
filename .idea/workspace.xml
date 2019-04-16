@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a612792-04ed-4870-ad7b-5ae731bfd448" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/example/LineReaderV2.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/example/NXTCamV5.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.7/fileContent/fileContent.lock" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/build/libs/template_project_gradle-2.5.3-all.jar" afterPath="$PROJECT_DIR$/build/libs/template_project_gradle-2.5.3-all.jar" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/shadowJar/MANIFEST.MF" afterPath="$PROJECT_DIR$/build/tmp/shadowJar/MANIFEST.MF" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/LineReaderV2.java" afterPath="$PROJECT_DIR$/src/main/java/example/LineReaderV2.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/MyFirstRobot.java" afterPath="$PROJECT_DIR$/src/main/java/example/MyFirstRobot.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -63,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyFirstRobot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyFirstRobot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/example/MyFirstRobot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,12 +79,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LineReaderV2.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LineReaderV2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/example/LineReaderV2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2895">
-              <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1790">
+              <caret line="213" column="57" lean-forward="false" selection-start-line="213" selection-start-column="57" selection-end-line="213" selection-end-column="57" />
+              <folding>
+                <element signature="e#4516#4517#0" expanded="true" />
+                <element signature="e#4557#4558#0" expanded="true" />
+                <element signature="e#5139#5140#0" expanded="true" />
+                <element signature="e#5179#5180#0" expanded="true" />
+                <element signature="e#5206#5207#0" expanded="true" />
+                <element signature="e#5247#5248#0" expanded="true" />
+                <element signature="e#5283#5284#0" expanded="true" />
+                <element signature="e#5328#5329#0" expanded="true" />
+                <element signature="e#5364#5365#0" expanded="true" />
+                <element signature="e#5409#5410#0" expanded="true" />
+                <element signature="e#5946#5947#0" expanded="true" />
+                <element signature="e#6001#6002#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,7 +108,14 @@
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="0">
                 <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
+                <folding>
+                  <marker date="1555400718640" expanded="true" signature="7703:8146" ph="h3: ###### EV3Dev-lang-java tasks" />
+                  <marker date="1555400718640" expanded="true" signature="8148:8610" ph="h3: ###### Installer tasks" />
+                  <marker date="1555400718640" expanded="true" signature="8612:9147" ph="h3: ###### EV3Dev tasks" />
+                  <marker date="1555400718640" expanded="true" signature="9149:9277" ph="h2: #### Javadocs" />
+                  <marker date="1555400718640" expanded="true" signature="9279:9379" ph="h2: #### Examples" />
+                  <marker date="1555400718640" expanded="true" signature="9381:9507" ph="h2: #### Issues" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -732,12 +756,12 @@
         <option value="$PROJECT_DIR$/gradle/deploy.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/example/LineFollower.java" />
         <option value="$PROJECT_DIR$/config.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/example/LineReaderV2.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/MyFirstRobot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/LineReaderV2.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="821" />
@@ -937,7 +961,7 @@
     <option name="totallyTimeSpent" value="871000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="821" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -997,7 +1021,14 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1555400718640" expanded="true" signature="7703:8146" ph="h3: ###### EV3Dev-lang-java tasks" />
+              <marker date="1555400718640" expanded="true" signature="8148:8610" ph="h3: ###### Installer tasks" />
+              <marker date="1555400718640" expanded="true" signature="8612:9147" ph="h3: ###### EV3Dev tasks" />
+              <marker date="1555400718640" expanded="true" signature="9149:9277" ph="h2: #### Javadocs" />
+              <marker date="1555400718640" expanded="true" signature="9279:9379" ph="h2: #### Examples" />
+              <marker date="1555400718640" expanded="true" signature="9381:9507" ph="h2: #### Issues" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -1036,7 +1067,14 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1555400718640" expanded="true" signature="7703:8146" ph="h3: ###### EV3Dev-lang-java tasks" />
+              <marker date="1555400718640" expanded="true" signature="8148:8610" ph="h3: ###### Installer tasks" />
+              <marker date="1555400718640" expanded="true" signature="8612:9147" ph="h3: ###### EV3Dev tasks" />
+              <marker date="1555400718640" expanded="true" signature="9149:9277" ph="h2: #### Javadocs" />
+              <marker date="1555400718640" expanded="true" signature="9279:9379" ph="h2: #### Examples" />
+              <marker date="1555400718640" expanded="true" signature="9381:9507" ph="h2: #### Issues" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -1083,7 +1121,14 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1555400718640" expanded="true" signature="7703:8146" ph="h3: ###### EV3Dev-lang-java tasks" />
+              <marker date="1555400718640" expanded="true" signature="8148:8610" ph="h3: ###### Installer tasks" />
+              <marker date="1555400718640" expanded="true" signature="8612:9147" ph="h3: ###### EV3Dev tasks" />
+              <marker date="1555400718640" expanded="true" signature="9149:9277" ph="h2: #### Javadocs" />
+              <marker date="1555400718640" expanded="true" signature="9279:9379" ph="h2: #### Examples" />
+              <marker date="1555400718640" expanded="true" signature="9381:9507" ph="h2: #### Issues" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -1168,33 +1213,60 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-1282">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1555400718640" expanded="true" signature="7703:8146" ph="h3: ###### EV3Dev-lang-java tasks" />
+            <marker date="1555400718640" expanded="true" signature="8148:8610" ph="h3: ###### Installer tasks" />
+            <marker date="1555400718640" expanded="true" signature="8612:9147" ph="h3: ###### EV3Dev tasks" />
+            <marker date="1555400718640" expanded="true" signature="9149:9277" ph="h2: #### Javadocs" />
+            <marker date="1555400718640" expanded="true" signature="9279:9379" ph="h2: #### Examples" />
+            <marker date="1555400718640" expanded="true" signature="9381:9507" ph="h2: #### Issues" />
+          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <folding>
+              <marker date="1555400718640" expanded="true" signature="7703:8146" ph="h3: ###### EV3Dev-lang-java tasks" />
+              <marker date="1555400718640" expanded="true" signature="8148:8610" ph="h3: ###### Installer tasks" />
+              <marker date="1555400718640" expanded="true" signature="8612:9147" ph="h3: ###### EV3Dev tasks" />
+              <marker date="1555400718640" expanded="true" signature="9149:9277" ph="h2: #### Javadocs" />
+              <marker date="1555400718640" expanded="true" signature="9279:9379" ph="h2: #### Examples" />
+              <marker date="1555400718640" expanded="true" signature="9381:9507" ph="h2: #### Issues" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/LineReaderV2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/MyFirstRobot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2895">
-          <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/MyFirstRobot.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/example/LineReaderV2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+        <state relative-caret-position="1790">
+          <caret line="213" column="57" lean-forward="false" selection-start-line="213" selection-start-column="57" selection-end-line="213" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4516#4517#0" expanded="true" />
+            <element signature="e#4557#4558#0" expanded="true" />
+            <element signature="e#5139#5140#0" expanded="true" />
+            <element signature="e#5179#5180#0" expanded="true" />
+            <element signature="e#5206#5207#0" expanded="true" />
+            <element signature="e#5247#5248#0" expanded="true" />
+            <element signature="e#5283#5284#0" expanded="true" />
+            <element signature="e#5328#5329#0" expanded="true" />
+            <element signature="e#5364#5365#0" expanded="true" />
+            <element signature="e#5409#5410#0" expanded="true" />
+            <element signature="e#5946#5947#0" expanded="true" />
+            <element signature="e#6001#6002#0" expanded="true" />
           </folding>
         </state>
       </provider>

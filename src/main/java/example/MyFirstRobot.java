@@ -99,6 +99,7 @@ public class MyFirstRobot {
 
 
 
+
         System.out.println("Checking Battery");
         System.out.println("Votage: " + Battery.getInstance().getVoltage());
     }
